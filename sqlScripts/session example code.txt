@@ -1,0 +1,13 @@
+SELECT permissionLevel
+FROM user u
+JOIN session s
+ON u.id = s.userID
+AND s.sessionKey = {givenKey}
+AND GETDATE() < s.expireDate
+
+--Will return permission if Valid key and not expired
+--Will return none otherwise
+
+every X hours, a service would run to clear out expired sessions
+
+DELETE FROM session s WHERE GETDATE() > s.expireDate
