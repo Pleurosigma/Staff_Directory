@@ -3,7 +3,7 @@
 /* Directives */
 
 
-angular.module('staffDirectory.directives', []).
+angular.module('staffDirectoryAdmin.directives', []).
   directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {
       elm.text(version);

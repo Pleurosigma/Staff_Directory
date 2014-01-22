@@ -6,10 +6,11 @@
 
 /* Controllers */
 
-var staffDirectory = angular.module('staffDirectory.controllers', []);
+var staffDirectory = angular.module('staffDirectoryAdmin.controllers', []);
 
 staffDirectory.controller('DirectoryCtrl', ['$scope',
 	function($scope) {
+		$scope.test = 'nav.html';
 		$scope.directoryClass = 'active';
 	}]);
 

@@ -2,25 +2,25 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('staffDirectory', [
+angular.module('staffDirectoryAdmin', [
   'ngRoute',
-  'staffDirectory.filters',
-  'staffDirectory.services',
-  'staffDirectory.directives',
-  'staffDirectory.controllers'
+  'staffDirectoryAdmin.filters',
+  'staffDirectoryAdmin.services',
+  'staffDirectoryAdmin.directives',
+  'staffDirectoryAdmin.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 		.when('/directory', {
-				templateUrl: 'partials/directory.html',
+				templateUrl: 'partials/admin/directory.html',
 				controller: 'DirectoryCtrl'
 		})
 		.when('/contact', {
-			templateUrl: 'partials/contact.html',
+			templateUrl: 'partials/admin/contact.html',
 			controller: 'ContactCtrl'
 		})
 		.when('/admin', {
-			templateUrl: 'partials/admin.html',
+			templateUrl: 'partials/admin/admin.html',
 			controller: 'AdminCtrl'
 		});
 	$routeProvider.otherwise( {
