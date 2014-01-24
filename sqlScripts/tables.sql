@@ -10,36 +10,40 @@ phoneNumber varchar(10),
 yearsOfService varchar(10),
 createdDate date,
 modifiedDate date,
-primary key (personId)
+primary key (personId),
+foreign key (staffLevelId) references StaffLevel(staffLevelId),
+foreign key (divisionId) references Division(divisionId)
 );
 
 create table User
 (
 userId int not null auto_increment,
-foreign key (personId) references Person(personID),
+personId int,
 permissionLevel varchar(255),
 username varchar(255),
 passwordHash varchar(255),
 createdDate date,
 modifiedDate date,
-primary key (userId)
+primary key (userId),
+foreign key (personId) references Person(personId)
 );
 
 create table Session
 (
 sessionId int not null auto_increment,
-foreign key (userId) references User(userId),
+userId int,
 sessionKey varchar(255),
 expireTime time,
 createdDate date,
 modifiedDate date,
-primary key (sessionId)
+primary key (sessionId),
+foreign key (userId) references User(userId)
 );
 
 create table StaffLevel
 (
 staffLevelId int not null auto_increment,
-foreign key (personId) references Person(personId),
+personId int,
 level varchar(255),
 description text,
 createdDate date,
@@ -50,7 +54,7 @@ primary key (staffLevelId)
 create table Division
 (
 divisionId int not null auto_increment,
-foreign key (personId) references Person(personId),
+personId int,
 name varchar(255),
 description text,
 createdDate date,
