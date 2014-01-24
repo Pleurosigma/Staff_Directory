@@ -2,8 +2,8 @@ create table Person
 (
 personId int not null auto_increment,
 staffLevelId int,
-statusId int,
 divisionId int,
+statusId int,
 firstName varchar(255),
 lastName varchar(255),
 phoneNumber varchar(10),
@@ -12,7 +12,8 @@ createdDate date,
 modifiedDate date,
 primary key (personId),
 foreign key (staffLevelId) references StaffLevel(staffLevelId),
-foreign key (divisionId) references Division(divisionId)
+foreign key (divisionId) references Division(divisionId),
+foreign key (statusId) references Status(statusId)
 );
 
 create table User
@@ -61,3 +62,13 @@ createdDate date,
 modifiedDate date,
 primary key (divisionId)
 );
+
+create table Status
+(
+statusId int not null auto_increment,
+personId int,
+status varchar(255),
+description text,
+createdDate date,
+modifiedDate date,
+primary key (statusId)
