@@ -11,19 +11,23 @@ angular.module('staffDirectoryAdmin', [
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider
+		.when('/dashboard', {
+			templateUrl: 'partials/dashboard.html',
+			controller: 'DashboardCtrl'
+		})
 		.when('/directory', {
-				templateUrl: 'partials/admin/directory.html',
-				controller: 'DirectoryCtrl'
+			templateUrl: 'partials/directory.html',
+			controller: 'DirectoryCtrl'
 		})
 		.when('/contact', {
-			templateUrl: 'partials/admin/contact.html',
+			templateUrl: 'partials/contact.html',
 			controller: 'ContactCtrl'
 		})
 		.when('/admin', {
-			templateUrl: 'partials/admin/admin.html',
+			templateUrl: 'partials/admin.html',
 			controller: 'AdminCtrl'
 		});
 	$routeProvider.otherwise( {
-			redirectTo: '/directory'
+			redirectTo: '/dashboard'
 		});
 }]);

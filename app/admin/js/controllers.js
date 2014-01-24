@@ -8,6 +8,10 @@
 
 var staffDirectory = angular.module('staffDirectoryAdmin.controllers', []);
 
+staffDirectory.controller('DashboardCtrl', ['$scope',
+	function($scope) {
+		$scope.dashboardClass='active';
+	}]);
 staffDirectory.controller('DirectoryCtrl', ['$scope',
 	function($scope) {
 		$scope.test = 'nav.html';
