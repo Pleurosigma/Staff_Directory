@@ -16,4 +16,7 @@ staffDirectory.controller('DashboardCtrl', ['$scope',
 staffDirectory.controller('AddStaffCtrl', ['$scope', 
 	function($scope) {
 		$scope.addStaffClass='active';
+		$scope.editStaff = function() {
+			console.log($scope.staff);
+		}
 	}]);

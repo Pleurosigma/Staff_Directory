@@ -34,3 +34,8 @@ body {
   content: "";
   padding: 0;
 }
+
+/*admin*/
+.staffForm {
+  padding-top: 10px;
+}
