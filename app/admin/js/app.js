@@ -15,18 +15,11 @@ config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'partials/dashboard.html',
 			controller: 'DashboardCtrl'
 		})
-		.when('/directory', {
-			templateUrl: 'partials/directory.html',
-			controller: 'DirectoryCtrl'
+		.when('/addStaff', {
+			templateUrl: 'partials/addStaff.html',
+			controller: 'AddStaffCtrl'
 		})
-		.when('/contact', {
-			templateUrl: 'partials/contact.html',
-			controller: 'ContactCtrl'
-		})
-		.when('/admin', {
-			templateUrl: 'partials/admin.html',
-			controller: 'AdminCtrl'
-		});
+		;
 	$routeProvider.otherwise( {
 			redirectTo: '/dashboard'
 		});

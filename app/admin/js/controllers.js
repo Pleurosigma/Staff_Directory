@@ -12,18 +12,8 @@ staffDirectory.controller('DashboardCtrl', ['$scope',
 	function($scope) {
 		$scope.dashboardClass='active';
 	}]);
-staffDirectory.controller('DirectoryCtrl', ['$scope',
-	function($scope) {
-		$scope.test = 'nav.html';
-		$scope.directoryClass = 'active';
-	}]);
 
-staffDirectory.controller('ContactCtrl', ['$scope',
+staffDirectory.controller('AddStaffCtrl', ['$scope', 
 	function($scope) {
-		$scope.contactClass = 'active';
-	}]);
-
-staffDirectory.controller('AdminCtrl', ['$scope',
-	function($scope) {
-		$scope.adminClass = 'active';
+		$scope.addStaffClass='active';
 	}]);

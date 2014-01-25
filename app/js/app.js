@@ -19,9 +19,9 @@ config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'partials/contact.html',
 			controller: 'ContactCtrl'
 		})
-		.when('/admin', {
-			templateUrl: 'partials/admin.html',
-			controller: 'AdminCtrl'
+		.when('/login', {
+			templateUrl: 'partials/login.html',
+			controller: 'LoginCtrl'
 		});
 	$routeProvider.otherwise( {
 			redirectTo: '/directory'

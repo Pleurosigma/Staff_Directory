@@ -18,7 +18,7 @@ staffDirectory.controller('ContactCtrl', ['$scope',
 		$scope.contactClass = 'active';
 	}]);
 
-staffDirectory.controller('AdminCtrl', ['$scope',
+staffDirectory.controller('LoginCtrl', ['$scope',
 	function($scope) {
-		$scope.adminClass = 'active';
+		$scope.loginClass = 'active';
 	}]);
