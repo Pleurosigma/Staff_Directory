@@ -15,9 +15,21 @@ config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'partials/dashboard.html',
 			controller: 'DashboardCtrl'
 		})
-		.when('/addStaff', {
-			templateUrl: 'partials/addStaff.html',
-			controller: 'AddStaffCtrl'
+		.when('/addPerson', {
+			templateUrl: 'partials/addPerson.html',
+			controller: 'AddPersonCtrl'
+		})
+		.when('/editPerson', {
+			templateUrl: 'partials/editPerson.html',
+			controller: 'EditPersonCtrl'
+		})
+		.when('/addUser', {
+			templateUrl: 'partials/addUser.html',
+			controller: 'AddUserCtrl'
+		})
+		.when('/deleteUser', {
+			templateUrl: 'partials/deleteUser.html',
+			controller: 'DeleteUserCtrl'
 		})
 		;
 	$routeProvider.otherwise( {

@@ -1,0 +1,22 @@
+[
+	{
+		"userId":0,
+		"personId": 0,
+		"statusId": 1,
+		"permissionLevel": 0,
+		"username": "lcwilker",
+		"passwordHash": "#hash#",
+		"createdDate": 1390679402,
+		"modifiedDate": null
+	},
+	{
+		"userId":0,
+		"personId": 0,
+		"statusId": 1,
+		"permissionLevel": 0,
+		"username": "cBlashkad",
+		"passwordHash": "#hash#",
+		"createdDate": 1390679402,
+		"modifiedDate": null		
+	}
+]

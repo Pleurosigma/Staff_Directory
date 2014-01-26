@@ -13,10 +13,48 @@ staffDirectory.controller('DashboardCtrl', ['$scope',
 		$scope.dashboardClass='active';
 	}]);
 
-staffDirectory.controller('AddStaffCtrl', ['$scope', 
+staffDirectory.controller('AddPersonCtrl', ['$scope', 
 	function($scope) {
-		$scope.addStaffClass='active';
-		$scope.editStaff = function() {
+		$scope.addPersonClass='active';
+		$scope.personFormPrimaryButtonValue='add';
+		$scope.personFormPrimarySubmit = function() {
 			console.log($scope.staff);
 		}
+	}]);
+
+staffDirectory.controller('EditPersonCtrl', ['$scope', '$http',
+	function($scope, $http) {
+		$scope.editPersonClass='active';
+		$scope.personFormPrimaryButtonValue='edit';
+		$scope.personFormDangerButtonValue='delete';
+		$scope.parentFormShowDangerButton = true;
+		$scope.persons = [];
+
+		$http.get('/app/json/person.json').success(function(data) {
+			$scope.persons = data;
+		});
+
+		$scope.selectPerson = function(person){
+			$scope.person = person
+		};
+
+
+		$scope.personFormPrimarySubmit = function() {
+			console.log($scope.person);
+		}
+	}]);
+
+staffDirectory.controller('AddUserCtrl', ['$scope', '$http',
+	function($scope, $http) {
+		$scope.addUserClass='active';
+		$scope.persons = [];
+
+		$http.get('/app/json/person.json').success(function(data) {
+			$scope.persons = data;
+		});
+	}]);
+
+staffDirectory.controller('DeleteUserCtrl', ['$scope', '$http',
+	function($scope, $http) {
+		$scope.deleteUserClass='active';
 	}]);

@@ -1,0 +1,48 @@
+<form class="form-horizontal" role="form">
+	<div class="form-group">
+		<label for="personSearch" class="col-sm-2 control-label">Search</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="personSearch" placeholder="Enter Text" ng-model="personSearch">
+		</div>
+		<label for="personSort" class="col-sm-1 control-label">Sort</label>
+		<div class="col-sm-4">			
+			<select class="form-control" id="personOrder" ng-model="personOrder">
+				<option value="personId">ID</option>
+				<option value="firstName">First Name</option>
+				<option value="lastName">Last Name</option>
+			</select>
+		</div>
+	</div>
+</form>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>
+				ID
+			</th>
+			<th>
+				First Name
+			</th>
+			<th>
+				Last Name
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="person in persons | filter: personSearch | orderBy:personOrder">
+			<td>
+				{{person.personId}}	
+			</td>
+			<td>
+				{{person.firstName}}
+			</td>
+			<td>
+				{{person.lastName}}
+			</td>
+			<td>
+				<button type="button" class="btn btn-primary btn-xs" ng-click="selectPerson(person)">Select</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
