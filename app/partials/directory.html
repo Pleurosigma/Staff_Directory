@@ -1,1 +1,70 @@
 <div ng-include src="'partials/nav.html'"></div>
+<div class="container">
+	<h3>Directory</h3>
+	<div class="form-horizontal" role="form">
+		<label for="personSearch" class="col-sm-2 control-label">Search</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" id="personSearch" placeholder="Enter Text" ng-model="personSearch">
+		</div>
+		<label for="personSort" class="col-sm-1 control-label">Sort</label>
+		<div class="col-sm-4">
+			<select class="form-control" id="personOrder" ng-model="personOrder">
+				<option value="personId">ID</option>
+				<option value="firstName">First Name</option>
+				<option value="lastName">Last Name</option>
+				<option value="staffLevelId">Staff Level</option>
+				<option value="division.name">Division</option>
+			</select>
+		</div>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th></th>
+				<th>
+					First Name
+				</th>
+				<th>
+					Last Name
+				</th>
+				<th>
+					Email
+				</th>
+				<th>
+					Phone #
+				</th>
+				<th>
+					Staff Level
+				</th>
+				<th>
+					Division
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in persons | filter:personSearch | orderBy:personOrder">
+				<td>
+					<a class="btn btn-primary btn-xs" href="#directory/{{person.personId}}">Details</a>
+				</td>				
+				<td>
+					{{person.firstName}}
+				</td>
+				<td>
+					{{person.lastName}}
+				</td>
+				<td>
+					{{person.email}}
+				</td>
+				<td>
+					{{person.phoneNumber}}
+				</td>
+				<td>
+					{{person.staffLevelId}}
+				</td>
+				<td>
+					{{person.division.name}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

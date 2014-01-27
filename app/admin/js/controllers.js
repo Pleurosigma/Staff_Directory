@@ -2,10 +2,6 @@
 
 /* Controllers */
 
-'use strict';
-
-/* Controllers */
-
 var staffDirectory = angular.module('staffDirectoryAdmin.controllers', []);
 
 staffDirectory.controller('DashboardCtrl', ['$scope',
@@ -18,7 +14,7 @@ staffDirectory.controller('AddPersonCtrl', ['$scope',
 		$scope.addPersonClass='active';
 		$scope.personFormPrimaryButtonValue='add';
 		$scope.personFormPrimarySubmit = function() {
-			console.log($scope.staff);
+			console.log($scope.person);
 		}
 	}]);
 
@@ -28,6 +24,7 @@ staffDirectory.controller('EditPersonCtrl', ['$scope', '$http',
 		$scope.personFormPrimaryButtonValue='edit';
 		$scope.personFormDangerButtonValue='delete';
 		$scope.parentFormShowDangerButton = true;
+		$scope.personOrder = 'personId';
 		$scope.persons = [];
 
 		$http.get('/app/json/person.json').success(function(data) {
@@ -57,4 +54,8 @@ staffDirectory.controller('AddUserCtrl', ['$scope', '$http',
 staffDirectory.controller('DeleteUserCtrl', ['$scope', '$http',
 	function($scope, $http) {
 		$scope.deleteUserClass='active';
+		$scope.users = [];
+		$http.get('/app/json/user.json').success(function(data) {
+			$scope.users = data;
+		})
 	}]);

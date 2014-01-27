@@ -27,8 +27,8 @@
 	},
 	{
 		"personId": 2,
-		"staffLevelId": 0,
-		"divisionId": 0,
+		"staffLevelId": 4,
+		"divisionId": 1,
 		"statusId": 1,
 		"firstName": "Aaron",
 		"lastName": "Zzy",
@@ -40,8 +40,8 @@
 	},
 	{
 		"personId": 3,
-		"staffLevelId": 0,
-		"divisionId": 0,
+		"staffLevelId": 1,
+		"divisionId": 2,
 		"statusId": 1,
 		"firstName": "Helena",
 		"lastName": "Rogers",

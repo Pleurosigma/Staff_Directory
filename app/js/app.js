@@ -15,6 +15,10 @@ config(['$routeProvider', function($routeProvider) {
 				templateUrl: 'partials/directory.html',
 				controller: 'DirectoryCtrl'
 		})
+		.when('/directory/:personId', {
+			templateUrl: 'partials/personDetail.html',
+			controller: 'PersonDetailCtrl'
+		})
 		.when('/contact', {
 			templateUrl: 'partials/contact.html',
 			controller: 'ContactCtrl'

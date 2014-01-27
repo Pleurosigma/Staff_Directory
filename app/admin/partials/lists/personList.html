@@ -6,7 +6,7 @@
 		</div>
 		<label for="personSort" class="col-sm-1 control-label">Sort</label>
 		<div class="col-sm-4">			
-			<select class="form-control" id="personOrder" ng-model="personOrder">
+			<select class="form-control" id="personOrder" ng-init="personOrder = personId" ng-model="$parent.personOrder">
 				<option value="personId">ID</option>
 				<option value="firstName">First Name</option>
 				<option value="lastName">Last Name</option>
@@ -30,7 +30,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="person in persons | filter: personSearch | orderBy:personOrder">
+		<tr ng-repeat="person in persons | filter: personSearch | orderBy:$parent.personOrder">
 			<td>
 				{{person.personId}}	
 			</td>

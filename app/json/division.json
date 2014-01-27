@@ -1,0 +1,14 @@
+[
+	{
+		"divisionId": 0,
+		"name": "Software Dev"
+	},
+	{
+		"divisionId": 1,
+		"name": "Planning"
+	},
+	{
+		"divisionId": 2,
+		"name": "Medical"
+	}
+]

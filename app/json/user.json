@@ -10,11 +10,11 @@
 		"modifiedDate": null
 	},
 	{
-		"userId":0,
+		"userId":1,
 		"personId": 0,
 		"statusId": 1,
 		"permissionLevel": 0,
-		"username": "cBlashkad",
+		"username": "cblashka",
 		"passwordHash": "#hash#",
 		"createdDate": 1390679402,
 		"modifiedDate": null		
