@@ -4,9 +4,22 @@
 
 var staffDirectory = angular.module('staffDirectoryAdmin.controllers', []);
 
-staffDirectory.controller('DashboardCtrl', ['$scope',
-	function($scope) {
+staffDirectory.controller('AdminCtrl', ['$scope', '$http', '$userTools',
+	function($scope, $http, $userTools) {
+		$http.get('/app/json/me.json').success(function(data) {
+			if(!$userTools.isAdmin(data)){
+				window.location = '/app/index.html';
+			}
+		});
+	}]);
+
+staffDirectory.controller('DashboardCtrl', ['$scope', '$http',
+	function($scope, $http) {
 		$scope.dashboardClass='active';
+		$scope.me = {};
+		$http.get('/app/json/me.json').success(function(data) {
+			$scope.me = data;
+		});
 	}]);
 
 staffDirectory.controller('AddPersonCtrl', ['$scope', 
@@ -58,4 +71,20 @@ staffDirectory.controller('DeleteUserCtrl', ['$scope', '$http',
 		$http.get('/app/json/user.json').success(function(data) {
 			$scope.users = data;
 		})
+	}]);
+
+staffDirectory.controller('NavCtrl', ['$scope', '$http', '$userTools',
+	function($scope, $http, $userTools) {
+		$scope.me = {};
+		$http.get('/app/json/me.json').success(function(data) {
+			$scope.me = data;
+		});
+
+		$scope.isSuperAdmin = function() {
+			return $userTools.isSuperAdmin($scope.me);
+		};
+
+		$scope.isDevAdmin = function() {
+			return $userTools.isDevAdmin($scope.me);
+		}
 	}]);

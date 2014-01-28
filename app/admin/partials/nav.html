@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
 	<div class="container">
 		<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,9 +18,24 @@
 				<ul class="dropdown-menu">
 					<li class="{{addPersonClass}}"><a href="#addPerson">Add Person</a></li>
 					<li class="{{editPersonClass}}"><a href="#editPerson">Edit Person</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Add Staff Level</a></li>
+					<li><a href="#">Edit Staff Level</a></li>
 					<li class="divider"></li>
+					<li><a href="#">Add Division</a></li>
+					<li><a href="#">Edit Division</a></li>
+				</ul>
+			</li>
+			<li class="dropdown" ng-show="isSuperAdmin()">				
+				<a class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
+				<ul class="dropdown-menu">
 					<li class="{{addUserClass}}"><a href="#addUser">Add User</a></li>
 					<li class="{{deleteUserClass}}"><a href="#deleteUser">Delete User</a></li>
+					<li ng-show="isDevAdmin()"><a href="#changeUserPassword">Change User Password</a></li>
 				</ul>
 			</li>
         </ul>

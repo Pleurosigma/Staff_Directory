@@ -23,3 +23,15 @@ staffDirectory.service('$fileUpload', ['$http', function ($http) {
         });
     }
 }]);
+
+staffDirectory.service('$userTools', [function() {
+    this.isDevAdmin = function(user) {
+        return user.permissionLevel == 0;
+    };
+    this.isSuperAdmin = function(user) {
+        return user.permissionLevel <= 1;
+    };
+    this.isAdmin = function(user) {
+        return user.permissionLevel <= 2;
+    };
+}]);
