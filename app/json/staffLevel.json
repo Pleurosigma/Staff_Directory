@@ -1,0 +1,27 @@
+[
+	{
+		"staffLevelId": 0,
+		"level": 0,
+		"description": "Developer"
+	},
+	{
+		"staffLevelId": 1,
+		"level": 1,
+		"description": "Senior Staff"
+	},
+	{
+		"staffLevelId": 2,
+		"level": 2,
+		"description": "Staff"
+	},
+	{
+		"staffLevelId": 3,
+		"level": 3,
+		"description": "Jr Staff"
+	},
+	{
+		"staffLevelId": 4,
+		"level": 4,
+		"description": "Volunteer"
+	}
+]

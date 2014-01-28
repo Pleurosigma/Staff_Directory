@@ -29,9 +29,9 @@ staffDirectory.service('$userTools', [function() {
         return user.permissionLevel == 0;
     };
     this.isSuperAdmin = function(user) {
-        return user.permissionLevel <= 1;
+        return user.permissionLevel <= 4;
     };
     this.isAdmin = function(user) {
-        return user.permissionLevel <= 2;
+        return user.permissionLevel <= 9;
     };
 }]);

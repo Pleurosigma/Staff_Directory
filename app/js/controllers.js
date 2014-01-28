@@ -13,6 +13,7 @@ staffDirectory.controller('DirectoryCtrl', ['$scope', '$http',
 		$scope.directoryClass = 'active';
 		$scope.persons = [];
 		$scope.divisions = [];
+		$scope.staffLevels = [];
 		$scope.personOrder = 'personId';
 
 		var setPersonsDivisions = function() {
@@ -20,19 +21,28 @@ staffDirectory.controller('DirectoryCtrl', ['$scope', '$http',
 				var division = _.find($scope.divisions, function(division) {
 					return division.divisionId == person.divisionId;
 				});
+				var staffLevel = _.find($scope.staffLevels, function(staffLevel) {
+					return staffLevel.staffLevelId == person.staffLevelId;
+				});
 				person.division = division;
-				console.log(person);
+				person.staffLevel = staffLevel;
 			});
 		}
 		$http.get('/app/json/person.json').success(function(data) {
 			$scope.persons = data;
-			if($scope.divisions.length != 0) {
+			if($scope.divisions.length != 0 && $scope.staffLevels.length != 0) {
 				setPersonsDivisions();
 			}
 		});
 		$http.get('/app/json/division.json').success(function(data) {
 			$scope.divisions = data;
-			if($scope.persons.length != 0) {
+			if($scope.persons.length != 0 && $scope.staffLevels.length != 0) {
+				setPersonsDivisions();
+			}
+		});
+		$http.get('/app/json/staffLevel.json').success(function(data) {
+			$scope.staffLevels = data;
+			if($scope.persons.length != 0 && $scope.divisions.length !=0) {
 				setPersonsDivisions();
 			}
 		});
